@@ -58,7 +58,7 @@ handleOptionsChange(e) {
         />
         <TextField
           id ="NumOfPeople"
-          floatingLabelText="Ente NumOfPeople"
+          floatingLabelText="Enterrrr NumOfPeople"
           value={this.state.NumOfPeople}
           onChange={this.handleNumOfPeopleChange}
         />

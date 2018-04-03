@@ -22,17 +22,18 @@ class ReservationBlock extends Component {
   }
 
   handleReservationeSubmit(reservation){
-    let reservation = this.state.data;
+    let reservations = this.state.data;
     reservation.id = Date.now();
     axios.post(this.props.url, reservation)
     .then((result) =>{
-      this.setState({data:  [...reservation,result.data]});
+      this.setState({data:  [...reservations,result.data]});
     })
     .catch(err => {
       console.error(err);
 
     });
   }
+
 
   handleReservationDelete(id) {
     axios.delete(`${this.props.url}/${id}`)
