@@ -34,7 +34,7 @@ handleOptionsChange(e) {
     let endDate = this.state.endDate.trim();
     let NumOfPeople = this.state.NumOfPeople.trim();
     let Options =this.state.Options.trim();
-    if (!NumOfPeople || !startDate || endDate || Options) {
+    if (!NumOfPeople || !startDate || !endDate || !Options) {
       return;
     }
     this.props.onReservationSubmit({ startDate: startDate,endDate: endDate, NumOfPeople: NumOfPeople, Options: Options });
