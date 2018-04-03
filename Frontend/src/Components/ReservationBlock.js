@@ -21,10 +21,10 @@ class ReservationBlock extends Component {
       })
   }
 
-  handleReservationeSubmit(device){
+  handleReservationeSubmit(reservation){
     let reservation = this.state.data;
     reservation.id = Date.now();
-    axios.post(this.props.url, device)
+    axios.post(this.props.url, reservation)
     .then((result) =>{
       this.setState({data:  [...reservation,result.data]});
     })
@@ -67,7 +67,7 @@ class ReservationBlock extends Component {
         <ReservationForm
           onReservationSubmit={this.handleReservationeSubmit} />
         <ReservationList
-          onReservationDelete = {this.handleDeviceDelete}
+          onReservationDelete = {this.handleReservationDelete}
           onReservationEdit={this.handleReservationEdit}
           data={this.state.data}>
         </ReservationList>
