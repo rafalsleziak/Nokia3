@@ -10,7 +10,7 @@ export.reservation_list = function (req, res, next) {
   Reservation.find(function(err reservations)) {
     if (err)
     res.send(err);
-    res.json(reservation);
+    res.json(reservations);
 
     export.index=function(res,req) {
       req.render('index');

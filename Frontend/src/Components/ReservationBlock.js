@@ -9,7 +9,7 @@ class ReservationBlock extends Component {
     super(props);
     this.state = {data: []};
     this.loadReservationFromServer = this.loadReservationFromServer.bind(this);
-    this.handleReservationeSubmit = this.handleReservationeSubmit.bind(this);
+    this.handleReservationSubmit = this.handleReservationSubmit.bind(this);
     this.handleReservationDelete = this.handleReservationDelete.bind(this);
     this.handleReservationEdit = this.handleReservationEdit.bind(this);
   }
@@ -21,7 +21,7 @@ class ReservationBlock extends Component {
       })
   }
 
-  handleReservationeSubmit(reservation){
+  handleReservationSubmit(reservation){
     let reservations = this.state.data;
     reservation.id = Date.now();
     axios.post(this.props.url, reservation)
@@ -38,8 +38,8 @@ class ReservationBlock extends Component {
   handleReservationDelete(id) {
     axios.delete(`${this.props.url}/${id}`)
       .then(res => {
-        let reservation = this.state.data.filter((item) => item._id !== id )
-          this.setState({data: reservation});
+        let reservations = this.state.data.filter((item) => item._id !== id )
+          this.setState({data: reservations});
         console.log('reservation deleted');
       })
       .catch(err => {
@@ -66,7 +66,7 @@ class ReservationBlock extends Component {
         <div style={style.deviceBox}>
           <h3 style={style.title}>Reservations:</h3>
         <ReservationForm
-          onReservationSubmit={this.handleReservationeSubmit} />
+          onReservationSubmit={this.handleReservationSubmit} />
         <ReservationList
           onReservationDelete = {this.handleReservationDelete}
           onReservationEdit={this.handleReservationEdit}
