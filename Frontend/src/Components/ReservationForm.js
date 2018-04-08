@@ -37,7 +37,7 @@ handleOptionsChange(e) {
     if (!NumOfPeople || !startDate || !endDate || !Options) {
       return;
     }
-    this.props.onReservationSubmit({ startDate: startDate,endDate: endDate, NumOfPeople: NumOfPeople, Options: Options });
+    this.props.onReservationSubmit({ startDate: startDate,endDate: endDate, numOfPeople: NumOfPeople, option: Options });
     this.setState({startDate: '', endDate: '', NumOfPeople: '', Options: ''});
   }
   render() {

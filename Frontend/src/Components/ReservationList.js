@@ -10,8 +10,8 @@ class ReservationList extends Component {
           <Reservation
             startDate={ reservation.startDate }
             endDate={reservation.endDate}
-            NumOfPeople={reservation.NumOfPeople}
-            Options={reservation.Options}
+            numOfPeople={reservation.numOfPeople}
+            options={reservation.option}
             uniqueID={ reservation['_id'] }
             onReservationDelete={this.props.onReservationDelete}
             onReservationEdit={this.props.onReservationEdit}

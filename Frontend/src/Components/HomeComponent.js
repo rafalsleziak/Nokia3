@@ -7,6 +7,7 @@ import {
 import DeviceBlock from './DeviceBlock';
 import ReservationBlock from './ReservationBlock';
 import style from '../style';
+import DragDropContext from './Calendar';
 
 const Home = () => (
   <div>
@@ -32,10 +33,13 @@ class HomeComponent extends Component{
           <li><Link to="/" key={1} onClick={this.handleClick} style={style.LinkBlock} >Home page</Link></li>
           <li><Link to="/devices" onClick={this.handleClick}>Devices</Link></li>
           <li><Link to="/reservations" onClick={this.handleClick}>Reservations</Link></li>
+         <li><Link to="/calendar" onClick={this.handleClick}>Calendar</Link></li>
+        
         </ul>
         <Route exact path="/" component={Home}/>
         <Route path="/devices" component={() => <DeviceBlock url='http://localhost:3001/api/devices'/>}/>
         <Route path="/reservations" component={() => <ReservationBlock url='http://localhost:3001/api/reservations'/>}/>
+        <Route path="/calendar" component={() => <DragDropContext url='http://localhost:3001/api/calendar'/>}/>
       </div>
 
 

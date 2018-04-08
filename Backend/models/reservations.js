@@ -26,7 +26,7 @@ var ReservationSchema =new Schema( {
   }
 });
 
-ReservationSchema.virtual('Reservation_startDate').get(function() {
+/*ReservationSchema.virtual('Reservation_startDate').get(function() {
   return this.startDate;
 });
 
@@ -40,7 +40,7 @@ ReservationSchema.virtual('Reservation_numOfPeople').get(function() {
 
 ReservationSchema.virtual('Reservation_option').get(function() {
   return this.option;
-});
+});*/
 
 ReservationSchema
 .virtual('url')

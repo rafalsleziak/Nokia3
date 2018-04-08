@@ -17,8 +17,8 @@ class Reservation extends Component {
       toBeDeleted: false,
       startDate: '',
       endDate: '',
-      NumOfPeople: '',
-      Options: '',
+      numOfPeople: '',
+      options: '',
     };
 
     this.handlestartDateChange = this.handlestartDateChange.bind(this);
@@ -89,8 +89,8 @@ class Reservation extends Component {
           <thead style={style.tablehead}>
             <th>startDate:</th>
             <th>endDate:</th>
-            <th>liczba ludzi:</th>
-            <th>pokój:</th>
+            <th>num of people:</th>
+            <th>room:</th>
             <th></th>
             <th></th>
           </thead>
@@ -98,7 +98,7 @@ class Reservation extends Component {
 
             <td>{this.props.startDate}</td>
             <td>{this.props.endDate}</td>
-            <td>{this.props.NumOfPeople}</td>
+            <td>{this.props.numOfPeople}</td>
             <td>{this.props.Options}</td>
             <td>
             {/*Edit button shows up only when object is not updated*/}
@@ -125,7 +125,7 @@ class Reservation extends Component {
                 <form onSubmit={this.handleEditReservation}>
                   <MuiThemeProvider>
                     <TextField
-                      id ="editName"
+                      id ="editdataStart"
                       floatingLabelText="Change date start"
                       value={this.state.startDate}
                       onChange={this.handlestartDateChange}
@@ -137,12 +137,36 @@ class Reservation extends Component {
                 <form onSubmit={this.handleEditReservation}>
                 <MuiThemeProvider>
                   <TextField
-                    id ="editNumLeft"
-                    floatingLabelText="Change available devices..."
+                    id ="editdataEnd"
+                    floatingLabelText="Change date end"
                     value={this.state.numLeft}
-                    onChange={this.handleNumLeftChange}
+                    onChange={this.handleendDateChange}
                   />
                 </MuiThemeProvider>
+                </form>
+              </td>
+              <td>
+                <form onSubmit={this.handleEditReservation}>
+                  <MuiThemeProvider>
+                    <TextField
+                      id ="editnumOfPeople"
+                      floatingLabelText="numOfPeople"
+                      value={this.state.numOfPeople}
+                      onChange={this.handlestartDateChange}
+                    />
+                  </MuiThemeProvider>
+                </form>
+              </td>
+              <td>
+                <form onSubmit={this.handleEditReservation}>
+                  <MuiThemeProvider>
+                    <TextField
+                      id ="editOptions"
+                      floatingLabelText="Change the room"
+                      value={this.state.options}
+                      onChange={this.handleOptionsChange}
+                    />
+                  </MuiThemeProvider>
                 </form>
               </td>
               <td>
